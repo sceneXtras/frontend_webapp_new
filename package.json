@@ -89,7 +89,7 @@
     "@vercel/analytics": "^1",
     "ahooks": "^3",
     "ai": "^3.0.0",
-    "antd": "^5",
+    "antd": "^5.15.1",
     "antd-style": "^3",
     "brotli-wasm": "^2",
     "chroma-js": "^2",
