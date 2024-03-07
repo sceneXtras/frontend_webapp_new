@@ -10,8 +10,8 @@ const StopLoadingIcon = memo(() => {
       height={16}
       viewBox="0 0 1024 1024"
       width={16}
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
+      xmlns=""
+      xmlnsXlink=""
     >
       <g fill="none">
         <circle cx="512" cy="512" fill="none" r="426" stroke={theme.colorBorder} strokeWidth="72" />
