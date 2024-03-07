@@ -1,12 +1,7 @@
 'use client';
 
-import { Icon } from '@lobehub/ui';
-import { Button } from 'antd';
-import { SendHorizonal } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { memo } from 'react';
 import dynamic from 'next/dynamic';
-import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import DataImporter from '@/features/DataImporter';
@@ -22,11 +17,10 @@ const AgentSearchBar = dynamic(() => import('../../../market/features/AgentSearc
 });
 
 const Banner = memo<{ mobile?: boolean }>(({ mobile }) => {
-  const { t } = useTranslation('welcome');
-  const router = useRouter();
   const { styles } = useStyles();
   const [switchSession] = useSessionStore((s) => [s.switchSession]);
-  const [switchBackToChat, isMobile] = useGlobalStore((s) => [s.switchBackToChat, s.isMobile]);
+  // Keeping _isMobile for potential future use, indicating it's currently unused but may be needed
+  const [switchBackToChat, _isMobile] = useGlobalStore((s) => [s.switchBackToChat, s.isMobile]);
 
   return (
     <>
@@ -40,15 +34,14 @@ const Banner = memo<{ mobile?: boolean }>(({ mobile }) => {
         justify={'center'}
         width={'100%'}
       >
-                    <AgentSearchBar />
+        <AgentSearchBar />
 
         <DataImporter
           onFinishImport={() => {
             switchSession();
           }}
         >
-          <Flexbox align={'center'} gap={4} horizontal justify={'center'}>
-          </Flexbox>
+          <Flexbox align={'center'} gap={4} horizontal justify={'center'}></Flexbox>
         </DataImporter>
       </Flexbox>
     </>
