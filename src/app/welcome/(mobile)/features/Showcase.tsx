@@ -4,7 +4,7 @@ import { Center, Flexbox } from 'react-layout-kit';
 import Banner from '@/app/welcome/features/Banner';
 
 const Showcase = memo(() => (
-  <Flexbox align={'center'} justify={'center'} style={{ height: 'calc(100% - 44px)' }}>
+  <Flexbox align={'center'} justify={'center'} style={{ height: 'calc(50% - 30px)' }}>
     <Center gap={16}>
       <Banner mobile />
     </Center>
@@ -14,3 +14,4 @@ const Showcase = memo(() => (
 ));
 
 export default Showcase;
+

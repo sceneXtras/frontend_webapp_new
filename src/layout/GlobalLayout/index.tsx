@@ -35,6 +35,7 @@ const useStyles = createStyles(({ css, token }) => ({
     height: 100%;
 
     background: ${token.colorBgLayout};
+    background: linear-gradient(to right, rgba(255,165,0,0.05) 0%, rgba(0,128,0,0.05) 100%);
   `,
 }));
 
