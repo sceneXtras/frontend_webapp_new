@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities;;
+@layer components {
+  .movie-display {
+    @apply flex flex-wrap justify-center items-center gap-5p-2.5 box-border;
+  }
+  .movie {
+    @apply w-20 h-29 rounded-lg shadow-lg cursor-pointer relative preserve-3d transition-transform duration-300;
+    transform: translate(0, 2.5rem); /* Adjust as needed */
+  }
+  .movie:first-child {
+    @apply border-2 border-transparent animation[borderGlow 2.6s infinite linear];
+  }
+  .movie:hover {
+    @apply shadow-md scale-110;
+    transform: translateY(-1.5%);
+  }
+  .movie::before, .movie::after {
+    @apply absolute inset-0 rounded-lg transition-opacity duration-300;
+    content: '';
+    background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(255, 255, 255, 0.305) 50%, rgba(128, 186, 232, 0.1) 100%);
+  }
+  .movie:hover::before {
+    opacity: 0;
+  }
+  .movie:hover::after {
+    opacity: 1;
+  }
+}  .first-item {
+    /* Define your first-item specific styles here */
+  }
+  .first-item-hover:hover {
+    @apply opacity-100; /* Adjust based on your desired opacity */
+  }
+}
