@@ -27,7 +27,9 @@ const MoviePosterCard = memo<SpotlightCardProps>(({ items, renderItem }) => {
       {items.map((item, index) => {
         const children = renderItem(item);
         return (
-          <div className={styles.container} key={index}>
+          <div className={styles.gridContainer} key={index}>
+            {' '}
+            {/* Corrected from styles.container to styles.gridContainer */}
             {children}
           </div>
         );
