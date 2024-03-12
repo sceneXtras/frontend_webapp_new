@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
+import 'src/styles/tailwind.css';
 
 import { useSessionStore } from '@/store/session';
 import { agentSelectors, sessionSelectors } from '@/store/session/selectors';
@@ -50,7 +51,9 @@ const Main = memo(() => {
         size={40}
         title={title}
       />
-      <ChatHeaderTitle desc={displayDesc} tag={<Tags />} title={displayTitle} />
+      <div className="p-4 bg-red-500">
+        <ChatHeaderTitle desc={displayDesc} tag={<Tags />} title={displayTitle} />
+      </div>
     </Flexbox>
   );
 });
