@@ -127,10 +127,9 @@
   "share": "Share",
   "stop": "Stop",
   "tab": {
-    "chat": "Home",
+    "chat": "Chat",
     "market": "Discover",
-    "setting": "Settings",
-    "shop": "Detect"
+    "setting": "Settings"
   },
   "telemetry": {
     "allow": "Allow",
