@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslation } from 'react-i18next';
+import 'src/styles/tailwind.css';
 
 import FullscreenLoading from '@/components/FullscreenLoading';
 
