@@ -25,7 +25,8 @@ const Header = memo(() => {
   const avatar = useGlobalStore(commonSelectors.userAvatar);
   return (
     <MobileNavBar
-      center={<Logo type={'text'} />}
+      // This is where the LobeHub logo is displayed
+      center={<Logo type={''} />}
       left={
         <div onClick={() => router.push('/settings')} style={{ marginLeft: 8 }}>
           {avatar ? <Avatar avatar={avatar} size={28} /> : <Logo size={28} />}

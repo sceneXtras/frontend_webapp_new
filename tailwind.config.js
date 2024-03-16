@@ -14,6 +14,7 @@ module.exports = {
       animation: {
         borderGlow: 'borderGlow 2.6s infinite linear',
         pop: 'pop 0.5s ease-out forwards',
+        scale: 'scale 0.5s ease-in-out',
         shine: 'shine 1s linear infinite',
       },
       keyframes: {
@@ -26,6 +27,10 @@ module.exports = {
           '0%': { transform: 'scale(0)' },
           '100%': { transform: 'scale(1)' },
           '80%': { transform: 'scale(1.1)' },
+        },
+        scale: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
         },
         shine: {
           '0%': { backgroundPosition: '-100px 0' },

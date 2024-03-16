@@ -14,9 +14,9 @@
   "duplicateTitle": "{{title}} Copy",
   "historyRange": "History Range",
   "inbox": {
-    "defaultMessage": "Hello, I'm your virtual agent. You can ask me anything, and I'll do my best to answer you. If you need a more professional or customized agent, click on `+` to create a custom agent.",
+    "defaultMessage": "Hi, I'm SceneGPT, your streaming companion. Do you have any questions about what you are currently watching? Or anything else?",
     "desc": "Activate the brain cluster and spark creative thinking. Your virtual agent is here to communicate with you about everything.",
-    "title": "Just Chat"
+    "title": "SceneGPT"
   },
   "input": {
     "more": "more",
@@ -37,7 +37,7 @@
   "pinOff": "Unpin",
   "regenerate": "Regenerate",
   "roleAndArchive": "Role and Archive",
-  "searchAgentPlaceholder": "Search agents and conversations...",
+  "searchAgentPlaceholder": "Search conversations...",
   "sendPlaceholder": "Type your message here...",
   "sessionGroup": {
     "config": "Group Management",

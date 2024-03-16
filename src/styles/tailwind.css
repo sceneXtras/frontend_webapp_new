@@ -1,36 +1,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@layer components {
-  .movie-display {
-    @apply flex flex-wrap justify-center items-center gap-5 p-2.5 box-border;
-  }
-  .movie {
-    @apply w-20 h-29 rounded-lg shadow-lg cursor-pointer relative transition-transform duration-300;
-    /* Removed preserve-3d and transform properties to handle them dynamically in components if needed */
-  }
-  .movie:first-child {
-    @apply border-2 border-transparent; /* Kept static styling, removed animation for dynamic handling */
-  }
-  .movie:hover {
-    @apply shadow-md scale-110; /* Kept hover effects that are static */
-  }
-  .movie::before, .movie::after {
-    @apply absolute inset-0 rounded-lg transition-opacity duration-300;
-    content: '';
-    background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(255, 255, 255, 0.305) 50%, rgba(128, 186, 232, 0.1) 100%);
-    /* Kept pseudo-elements styling static */
-  }
-  .movie:hover::before {
-    opacity: 0;
-  }
-  .movie:hover::after {
-    opacity: 1;
-  }
-  .first-item {
-    /* Define your first-item specific styles here */
-  }
-  .first-item-hover:hover {
-    @apply opacity-100; /* Adjust based on your desired opacity */
-  }
-}
+

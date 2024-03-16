@@ -1,7 +1,7 @@
 export default [
   {
     dir: 'Basic',
-    title: '🤯 Basic',
+    title: '🍿 Basic',
   },
   {
     dir: 'Internationalization',

@@ -1,9 +1,11 @@
-import { memo, useEffect, useState } from 'react';
 import Image from 'next/image';
+import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
+import 'src/styles/tailwind.css';
 
-import { genSize, useStyles } from './style';
+// Importing tailwind CSS
+import { genSize } from './style';
 
 const Hero = memo<{ mobile?: boolean; width: number }>(({ width, mobile }) => {
   const [isClient, setIsClient] = useState(false);
@@ -21,36 +23,42 @@ const Hero = memo<{ mobile?: boolean; width: number }>(({ width, mobile }) => {
   size.marginTop = mobile ? -size.logo / 9 : -size.logo / 3;
   size.marginBottom = mobile ? -size.logo / 9 : -size.logo / 4;
 
-  const { styles } = useStyles(size.base);
-
   const { t } = useTranslation('welcome');
 
   const logoSrc = '/icons/sx-full-logo.png';
-  
+
   return (
     <>
       <Flexbox
-        style={{
-          height: size.logo / 8, // Adjusted the height to be half the size of the logo
-          marginBottom: size.marginBottom,
-          marginTop: size.marginTop,
-          position: 'relative',
-        }}
+        className={`relative ${mobile ? 'mt-[calc(-1*size.logo/9)] mb-[calc(-1*size.logo/9)]' : 'mt-[calc(-1*size.logo/3)] mb-[calc(-1*size.logo/4)]'}`}
       >
-        {isClient && (
-          mobile ? 
-            <Image src={logoSrc} alt="Custom Logo" width={size.logo / 2} height={size.logo / 2} /> : 
-            <Image src={logoSrc} alt="Custom Logo Spline" layout="fill" objectFit="cover" style={{maxWidth: '50%', maxHeight: '50%'}} />
-        )}
+        {isClient &&
+          (mobile ? (
+            <Image
+              alt="Custom Logo"
+              className="animate-pop"
+              height={size.logo / 2}
+              src={logoSrc}
+              width={size.logo / 2}
+            />
+          ) : (
+            <Image
+              alt="Custom Logo Spline"
+              className="max-w-[50%] max-h-[50%] animate-pop"
+              layout="fill"
+              objectFit="cover"
+              src={logoSrc}
+            />
+          ))}
       </Flexbox>
-      <div className={styles.title} style={{ fontSize: size.title }}>
-        <strong style={mobile ? { fontSize: '1.2em' } : {}}></strong>
-        {mobile ? <br /> : ' '}
+      {/* The following divs are related to the "text-center" class that might be of interest for relocation or modification. 
+      Consider moving or commenting them out as per the requirement in the Showcase.tsx or another relevant file. */}
+      {/* <div className={`text-center ${mobile ? 'text-[calc(size.title*1.2)]' : 'text-[size.title]'} font-bold`}>
         {t('slogan.title')}
       </div>
-      <div className={styles.desc} style={{ fontSize: size.desc }}>
+      <div className={`text-center text-[size.desc]`}>
         {t('slogan.desc1')}
-      </div>
+      </div> */}
     </>
   );
 });
