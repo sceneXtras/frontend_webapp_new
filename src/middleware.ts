@@ -1,34 +1,12 @@
-import { NextResponse } from 'next/server';
+import { authMiddleware } from '@clerk/nextjs';
 
-import { getServerConfig } from '@/config/server';
-
-import { auth } from './app/api/auth/next-auth';
-import { OAUTH_AUTHORIZED } from './const/auth';
-
-export const config = {
-  matcher: '/api/:path*',
-};
-const defaultMiddleware = () => NextResponse.next();
-
-const withAuthMiddleware = auth((req) => {
-  // Just check if session exists
-  const session = req.auth;
-
-  // Check if next-auth throws errors
-  // refs: https://github.com/lobehub/lobe-chat/pull/1323
-  const isLoggedIn = !!session?.expires;
-
-  // Remove & amend OAuth authorized header
-  const requestHeaders = new Headers(req.headers);
-  requestHeaders.delete(OAUTH_AUTHORIZED);
-  if (isLoggedIn) requestHeaders.set(OAUTH_AUTHORIZED, 'true');
-  return NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
+// This example protects all routes including api/trpc routes
+// Please edit this to allow other routes to be public as needed.
+// See https://clerk.com/docs/references/nextjs/auth-middleware for more information about configuring your Middleware
+export default authMiddleware({
+  publicRoutes: ['/', '/sign-in', '/sign-up', '/welcome', '/api/config', '/api/plugin/store'],
 });
 
-const { ENABLE_OAUTH_SSO } = getServerConfig();
-
-export default !ENABLE_OAUTH_SSO ? defaultMiddleware : withAuthMiddleware;
+export const config = {
+  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+};

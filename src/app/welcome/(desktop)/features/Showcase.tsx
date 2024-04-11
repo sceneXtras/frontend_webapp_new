@@ -15,8 +15,6 @@ const Showcase = memo(() => (
     <GridShowcase>
       <Banner />
     </GridShowcase>
-    {/*TODO：暂时隐藏，待模板完成后再补回*/}
-    {/*<AgentTemplate width={width} />*/}
   </Flexbox>
 ));
 

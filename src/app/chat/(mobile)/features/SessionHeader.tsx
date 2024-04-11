@@ -26,9 +26,9 @@ const Header = memo(() => {
   return (
     <MobileNavBar
       // This is where the LobeHub logo is displayed
-      center={<Logo type={undefined} />}
+      center={avatar ? <Avatar avatar={avatar} size={28} /> : <Logo size={28} />}
       left={
-        <div onClick={() => router.push('/settings')} style={{ marginLeft: 8 }}>
+        <div onClick={() => router.push('/welcome')} style={{ marginLeft: 8 }}>
           {avatar ? <Avatar avatar={avatar} size={28} /> : <Logo size={28} />}
         </div>
       }

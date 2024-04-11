@@ -1,5 +1,6 @@
 'use client';
 
+import { UserButton } from '@clerk/nextjs';
 import { Logo } from '@lobehub/ui';
 import { PropsWithChildren, memo } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
@@ -23,6 +24,9 @@ const Desktop = memo<PropsWithChildren>(({ children }) => {
         <Flexbox className={styles.view} flex={1}>
           {children}
         </Flexbox>
+        <div className={styles.profile}>
+          <UserButton />
+        </div>
       </Center>
     </AppLayoutDesktop>
   );

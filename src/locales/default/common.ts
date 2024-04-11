@@ -41,6 +41,7 @@ export default {
   },
   feedback: '反馈与建议',
   historyRange: '历史范围',
+  home: 'home',
   import: '导入配置',
   importModal: {
     finish: {
@@ -118,6 +119,7 @@ export default {
   password: '密码',
   pin: '置顶',
   pinOff: '取消置顶',
+  profile: 'profile',
   regenerate: '重新生成',
   rename: '重命名',
   reset: '重置',
@@ -129,6 +131,7 @@ export default {
   tab: {
     chat: '会话',
     market: '发现',
+    profile: 'profile',
     setting: '设置',
   },
   telemetry: {

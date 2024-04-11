@@ -51,9 +51,7 @@ const Main = memo(() => {
         size={40}
         title={title}
       />
-      <div className="p-4 bg-red-500">
-        <ChatHeaderTitle desc={displayDesc} tag={<Tags />} title={displayTitle} />
-      </div>
+      <ChatHeaderTitle desc={displayDesc} tag={<Tags />} title={displayTitle} />
     </Flexbox>
   );
 });

@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs';
 import { ResolvingViewport } from 'next';
 import { cookies } from 'next/headers';
 import { PropsWithChildren } from 'react';
@@ -28,22 +29,24 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   const direction = isRtlLang(lang?.value || DEFAULT_LANG) ? 'rtl' : 'ltr';
 
   return (
-    <html dir={direction} lang={lang?.value || DEFAULT_LANG} suppressHydrationWarning>
-      <body>
-        <StyleRegistry>
-          <Layout
-            defaultAppearance={appearance?.value}
-            defaultLang={lang?.value}
-            defaultNeutralColor={neutralColor?.value as any}
-            defaultPrimaryColor={primaryColor?.value as any}
-            enableOAuthSSO={ENABLE_OAUTH_SSO}
-          >
-            {children}
-          </Layout>
-        </StyleRegistry>
-        <Analytics />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html dir={direction} lang={lang?.value || DEFAULT_LANG} suppressHydrationWarning>
+        <body>
+          <StyleRegistry>
+            <Layout
+              defaultAppearance={appearance?.value}
+              defaultLang={lang?.value}
+              defaultNeutralColor={neutralColor?.value as any}
+              defaultPrimaryColor={primaryColor?.value as any}
+              enableOAuthSSO={ENABLE_OAUTH_SSO}
+            >
+              {children}
+            </Layout>
+          </StyleRegistry>
+          <Analytics />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 };
 

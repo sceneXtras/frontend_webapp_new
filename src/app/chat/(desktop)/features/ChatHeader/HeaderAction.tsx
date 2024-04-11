@@ -1,3 +1,4 @@
+import { UserButton } from '@clerk/nextjs';
 import { ActionIcon } from '@lobehub/ui';
 import { PanelRightClose, PanelRightOpen } from 'lucide-react';
 import { memo } from 'react';
@@ -27,6 +28,7 @@ const HeaderAction = memo(() => {
         title={t('roleAndArchive')}
       />
       <SettingButton />
+      <UserButton />
     </>
   );
 });

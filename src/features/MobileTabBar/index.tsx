@@ -1,6 +1,6 @@
 import { Icon, MobileTabBar, type MobileTabBarProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { Bot, MessageSquare, User } from 'lucide-react';
+import { Home, MessageSquare, User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { rgba } from 'polished';
 import { memo, useMemo } from 'react';
@@ -28,6 +28,14 @@ export default memo<Props>(({ className, tabBarKey }) => {
   const items: MobileTabBarProps['items'] = useMemo(
     () => [
       {
+        icon: (active) => <Icon className={active ? styles.active : undefined} icon={Home} />,
+        key: SidebarTabKey.Home,
+        onClick: () => {
+          router.push('/welcome');
+        },
+        title: t('home'),
+      },
+      {
         icon: (active) => (
           <Icon className={active ? styles.active : undefined} icon={MessageSquare} />
         ),
@@ -38,20 +46,12 @@ export default memo<Props>(({ className, tabBarKey }) => {
         title: t('tab.chat'),
       },
       {
-        icon: (active) => <Icon className={active ? styles.active : undefined} icon={Bot} />,
-        key: SidebarTabKey.Market,
-        onClick: () => {
-          router.push('/market');
-        },
-        title: t('tab.market'),
-      },
-      {
         icon: (active) => <Icon className={active ? styles.active : undefined} icon={User} />,
         key: SidebarTabKey.Setting,
         onClick: () => {
-          router.push('/settings');
+          router.push('/profile');
         },
-        title: t('tab.setting'),
+        title: t('profile'),
       },
     ],
     [t],

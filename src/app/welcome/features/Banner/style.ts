@@ -37,6 +37,12 @@ export const useStyles = createStyles(({ css, token, stylish, cx, prefixCls }) =
       margin-top: 16px;
       color: ${token.colorTextDescription};
     `,
+    profile: css`
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      fill: ${token.colorText};
+    `,
     skip: css`
       color: ${token.colorTextDescription};
     `,

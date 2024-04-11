@@ -33,14 +33,6 @@ const MobileHeader = memo(() => {
         <>
           <ShareButton mobile open={open} setOpen={setOpen} />
           <SettingButton mobile />
-          {/*<Dropdown*/}
-          {/*  menu={{*/}
-          {/*    items,*/}
-          {/*  }}*/}
-          {/*  trigger={['click']}*/}
-          {/*>*/}
-          {/*  <ActionIcon icon={MoreHorizontal} />*/}
-          {/*</Dropdown>*/}
         </>
       }
       showBackButton

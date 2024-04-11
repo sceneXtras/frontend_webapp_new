@@ -79,6 +79,7 @@
     "@aws-sdk/client-bedrock-runtime": "^3.503.1",
     "@azure/openai": "^1.0.0-beta.11",
     "@cfworker/json-schema": "^1",
+    "@clerk/nextjs": "^4.29.9",
     "@google/generative-ai": "^0.2.0",
     "@icons-pack/react-simple-icons": "^9",
     "@lobehub/chat-plugin-sdk": "latest",
